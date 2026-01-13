@@ -1,0 +1,319 @@
+/* css/details.css */
+/* ESTILOS PARA LA PÁGINA DE DETALLES DEL USUARIO */
+
+.details-page {
+    padding: 40px 0;
+}
+
+.profile-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.profile-header {
+    background: linear-gradient(135deg, #3498db 0%, #2c3e50 100%);
+    padding: 40px;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+.profile-avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: white;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #3498db;
+    border: 5px solid white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.profile-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-name {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin: 10px 0;
+}
+
+.profile-email {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    margin-bottom: 5px;
+}
+
+.profile-role {
+    display: inline-block;
+    padding: 8px 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+.profile-body {
+    padding: 40px;
+}
+
+/* Información del perfil */
+.profile-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.info-section {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 25px;
+}
+
+.info-section h3 {
+    color: #2c3e50;
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #3498db;
+}
+
+.info-item {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.info-item:last-child {
+    margin-bottom: 0;
+}
+
+.info-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #3498db;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+
+.info-content h4 {
+    margin: 0 0 5px;
+    color: #7f8c8d;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.info-content p {
+    margin: 0;
+    color: #2c3e50;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+/* Estadísticas del usuario */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.stat-box {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    border: 2px solid #f1f1f1;
+    transition: all 0.3s ease;
+}
+
+.stat-box:hover {
+    border-color: #3498db;
+    transform: translateY(-5px);
+}
+
+.stat-box .number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #3498db;
+    margin-bottom: 5px;
+}
+
+.stat-box .label {
+    color: #7f8c8d;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Historial de actividad */
+.activity-timeline {
+    margin-top: 40px;
+}
+
+.activity-timeline h3 {
+    color: #2c3e50;
+    margin-bottom: 25px;
+    font-size: 1.5rem;
+}
+
+.timeline-item {
+    display: flex;
+    margin-bottom: 25px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #eee;
+    position: relative;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.timeline-date {
+    width: 100px;
+    flex-shrink: 0;
+    color: #7f8c8d;
+    font-size: 0.9rem;
+}
+
+.timeline-content {
+    flex-grow: 1;
+    padding-left: 20px;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: 94px;
+    top: 5px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #3498db;
+}
+
+.timeline-dot::after {
+    content: '';
+    position: absolute;
+    left: 3px;
+    top: 3px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: white;
+}
+
+.timeline-title {
+    color: #2c3e50;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.timeline-description {
+    color: #7f8c8d;
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+/* Botones de acción en detalles */
+.profile-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 1px solid #eee;
+}
+
+.btn-edit, .btn-delete, .btn-back {
+    flex: 1;
+    padding: 12px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.btn-edit {
+    background: #3498db;
+    color: white;
+}
+
+.btn-delete {
+    background: #e74c3c;
+    color: white;
+}
+
+.btn-back {
+    background: #f8f9fa;
+    color: #2c3e50;
+    border: 1px solid #ddd;
+}
+
+/* Responsive para detalles */
+@media (max-width: 768px) {
+    .profile-header {
+        padding: 30px 20px;
+    }
+    
+    .profile-avatar {
+        width: 120px;
+        height: 120px;
+        font-size: 2.5rem;
+    }
+    
+    .profile-name {
+        font-size: 1.8rem;
+    }
+    
+    .profile-body {
+        padding: 20px;
+    }
+    
+    .profile-info {
+        grid-template-columns: 1fr;
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .profile-actions {
+        flex-direction: column;
+    }
+    
+    .timeline-item {
+        flex-direction: column;
+    }
+    
+    .timeline-date {
+        width: auto;
+        margin-bottom: 10px;
+    }
+    
+    .timeline-content {
+        padding-left: 0;
+    }
+    
+    .timeline-dot {
+        display: none;
+    }
+}
