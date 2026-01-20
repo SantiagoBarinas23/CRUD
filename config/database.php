@@ -1,10 +1,9 @@
 <?php
 class Database {
-    // CONFIGURACIÓN PARA XAMPP (POR DEFECTO)
     private $host = "localhost";
     private $db_name = "sistema_usuarios";
-    private $username = "root";    // Así viene XAMPP
-    private $password = "";        // Sin contraseña por defecto
+    private $username = "root";  
+    private $password = "";       
     private $conn;
 
     public function getConnection() {

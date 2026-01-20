@@ -1,8 +1,6 @@
-    </div> <!-- Cierre del container -->
-
     <footer class="mt-5 py-3 bg-light">
         <div class="container text-center">
-            <p class="mb-0">&copy; <?php echo date('Y'); ?> <?php echo SITE_NAME; ?>. Todos los derechos reservados.</p>
+           
         </div>
     </footer>
 

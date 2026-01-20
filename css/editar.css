@@ -1,0 +1,333 @@
+/* css/editar.css - EXCLUSIVO para editar.php */
+
+/* Variables específicas de editar */
+:root {
+    --editar-primary: #1216f3;
+    --editar-secondary: #e67e22;
+    --editar-bg: #fffaf0;
+}
+
+/* Estilos EXCLUSIVOS del body de editar */
+body.page-editar {
+    background-color: var(--editar-bg);
+    min-height: 100vh;
+}
+
+/* Header de editar */
+.editar-header {
+    background: linear-gradient(135deg, var(--editar-primary) 0%, var(--editar-secondary) 100%);
+    color: white;
+    padding: 50px 0;
+    margin-bottom: 40px;
+    border-radius: 0 0 20px 20px;
+}
+
+.editar-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.editar-subtitle {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* Formulario de editar */
+.editar-form-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.editar-form-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    border-top: 5px solid var(--editar-primary);
+}
+
+.editar-form-header {
+    padding: 30px;
+    border-bottom: 1px solid #eee;
+    background: #f8f9fa;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.editar-form-header h3 {
+    margin: 0;
+    color: var(--editar-primary);
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-id-badge {
+    background: var(--editar-primary);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.editar-form-body {
+    padding: 40px;
+}
+
+/* Información del usuario */
+.user-info-summary {
+    background: #f8f9fa;
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 30px;
+    border-left: 5px solid var(--editar-primary);
+}
+
+.user-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.info-label {
+    font-size: 0.85rem;
+    color: #7f8c8d;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 5px;
+}
+
+.info-value {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+/* Campos de editar específicos */
+.editar-form-group {
+    margin-bottom: 30px;
+}
+
+.editar-form-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.editar-form-label {
+    display: block;
+    margin-bottom: 10px;
+    color: #2c3e50;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.editar-input-wrapper {
+    position: relative;
+}
+
+.editar-input-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--editar-primary);
+    z-index: 2;
+}
+
+.editar-form-control {
+    width: 100%;
+    padding: 15px 15px 15px 50px;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: #f8f9fa;
+}
+
+.editar-form-control:focus {
+    border-color: var(--editar-primary);
+    box-shadow: 0 0 0 4px rgba(243, 156, 18, 0.15);
+    background: white;
+}
+
+.editar-form-control:disabled {
+    background-color: #e9ecef;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* Sección de contraseña en editar */
+.password-change-section {
+    background: #000000;
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 30px;
+    border: 2px dashed var(--editar-primary);
+}
+
+.password-change-section h4 {
+    margin: 0 0 15px;
+    color: var(--editar-primary);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.password-change-note {
+    font-size: 0.9rem;
+    color: #7f8c8d;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+/* Botones de editar */
+.editar-form-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 40px;
+    border-top: 1px solid #eee;
+    margin-top: 40px;
+}
+
+.btn-editar-cancel {
+    padding: 14px 30px;
+    background: #f8f9fa;
+    border: 2px solid #ddd;
+    border-radius: 12px;
+    color: #2c3e50;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-editar-cancel:hover {
+    background: #e9ecef;
+    border-color: #ccc;
+    transform: translateY(-2px);
+}
+
+.btn-editar-submit {
+    padding: 14px 40px;
+    background: linear-gradient(135deg, var(--editar-primary) 0%, var(--editar-secondary) 100%);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-editar-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(243, 156, 18, 0.3);
+}
+
+/* Historial de cambios */
+.change-history {
+    background: #f8f9fa;
+    border-radius: 15px;
+    padding: 25px;
+    margin-top: 40px;
+}
+
+.change-history h4 {
+    margin: 0 0 20px;
+    color: var(--editar-primary);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.history-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.history-item {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.history-item:last-child {
+    border-bottom: none;
+}
+
+.history-action {
+    font-weight: 500;
+    color: #2c3e50;
+}
+
+.history-date {
+    font-size: 0.85rem;
+    color: #7f8c8d;
+}
+
+/* Responsive de editar */
+@media (max-width: 768px) {
+    .editar-header {
+        padding: 40px 0;
+        border-radius: 0 0 15px 15px;
+    }
+    
+    .editar-title {
+        font-size: 1.8rem;
+    }
+    
+    .editar-form-header {
+        flex-direction: column;
+        gap: 15px;
+        align-items: stretch;
+    }
+    
+    .editar-form-body {
+        padding: 25px;
+    }
+    
+    .editar-form-row {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .user-info-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .editar-form-actions {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .btn-editar-cancel,
+    .btn-editar-submit {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .history-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+}

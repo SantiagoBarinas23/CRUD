@@ -90,6 +90,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <select name="rol" class="form-control" <?php echo ($_SESSION['user_role'] != 'admin') ? 'disabled' : ''; ?>>
                             <option value="usuario" <?php echo $usuario['rol'] == 'usuario' ? 'selected' : ''; ?>>Usuario</option>
                             <option value="admin" <?php echo $usuario['rol'] == 'admin' ? 'selected' : ''; ?>>Administrador</option>
+                            <option value="moderador" <?php echo $usuario['rol'] == 'moderador' ? 'selected' : ''; ?>>Moderador</option>
                         </select>
                         <?php if($_SESSION['user_role'] != 'admin'): ?>
                             <input type="hidden" name="rol" value="<?php echo $usuario['rol']; ?>">

@@ -11,45 +11,21 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
-    <!-- DataTables -->
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
-    
-    <!-- CSS BASE (siempre se carga) -->
+    <!-- CSS BASE (OBLIGATORIO PARA TODOS) -->
     <link rel="stylesheet" href="css/base.css">
     
     <!-- CSS ESPECÍFICO POR PÁGINA -->
     <?php
     $current_page = basename($_SERVER['PHP_SELF']);
+    $css_file = "css/" . pathinfo($current_page, PATHINFO_FILENAME) . ".css";
     
-    switch($current_page) {
-        case 'login.php':
-            echo '<link rel="stylesheet" href="css/login.css">';
-            break;
-            
-        case 'index.php':
-            echo '<link rel="stylesheet" href="css/dashboard.css">';
-            break;
-            
-        case 'crear.php':
-        case 'editar.php':
-            echo '<link rel="stylesheet" href="css/forms.css">';
-            break;
-            
-        case 'ver.php':
-            echo '<link rel="stylesheet" href="css/details.css">';
-            break;
-            
-        case 'eliminar.php':
-            echo '<link rel="stylesheet" href="css/alerts.css">';
-            break;
+    if (file_exists($css_file)) {
+        echo '<link rel="stylesheet" href="' . $css_file . '">';
     }
     ?>
     
-    <!-- CSS adicional si existe -->
-    <?php if(file_exists('css/' . $current_page)): ?>
-        <link rel="stylesheet" href="css/<?php echo $current_page; ?>">
-    <?php endif; ?>
-    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👥</text></svg>">
 </head>
 <body class="<?php echo $current_page == 'login.php' ? 'login-page' : ''; ?>">
 <body>
