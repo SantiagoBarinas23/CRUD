@@ -1,20 +1,22 @@
 /* css/dashboard.css - EXCLUSIVO para index.php */
 
-/* Variables específicas del dashboard */
+/* ========== VARIABLES ========== */
 :root {
     --dashboard-primary: #2c3e50;
     --dashboard-secondary: #3498db;
     --dashboard-accent: #e74c3c;
+    --dashboard-success: #2ecc71;
+    --dashboard-warning: #f39c12;
     --dashboard-light: #ecf0f1;
 }
 
-/* Estilos EXCLUSIVOS del body del dashboard */
+/* ========== BODY ESPECÍFICO ========== */
 body.page-index {
     background-color: #f5f7fa;
     min-height: 100vh;
 }
 
-/* Header del dashboard */
+/* ========== HEADER DEL DASHBOARD ========== */
 .dashboard-header {
     background: linear-gradient(135deg, var(--dashboard-primary) 0%, var(--dashboard-secondary) 100%);
     color: white;
@@ -22,6 +24,7 @@ body.page-index {
     margin-bottom: 40px;
     position: relative;
     overflow: hidden;
+    border-radius: 0 0 20px 20px;
 }
 
 .dashboard-header::before {
@@ -50,7 +53,7 @@ body.page-index {
     z-index: 1;
 }
 
-/* Tarjetas de estadísticas */
+/* ========== TARJETAS DE ESTADÍSTICAS ========== */
 .stats-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -67,11 +70,29 @@ body.page-index {
     align-items: center;
     transition: all 0.3s ease;
     border-left: 5px solid var(--dashboard-secondary);
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -50%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(52, 152, 219, 0.1));
+    transform: skewX(-20deg);
+    transition: right 0.5s ease;
 }
 
 .stat-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+.stat-card:hover::before {
+    right: 100%;
 }
 
 .stat-icon {
@@ -85,6 +106,15 @@ body.page-index {
     justify-content: center;
     margin-right: 20px;
     font-size: 1.8rem;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+}
+
+.stat-info {
+    flex-grow: 1;
+    position: relative;
+    z-index: 1;
 }
 
 .stat-info h3 {
@@ -102,7 +132,7 @@ body.page-index {
     letter-spacing: 0.5px;
 }
 
-/* Tabla de usuarios */
+/* ========== TABLA DE USUARIOS ========== */
 .users-table-container {
     background: white;
     border-radius: 16px;
@@ -124,8 +154,12 @@ body.page-index {
     margin: 0;
     color: var(--dashboard-primary);
     font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
+/* ========== BÚSQUEDA ========== */
 .dashboard-search {
     position: relative;
     width: 300px;
@@ -137,6 +171,13 @@ body.page-index {
     border: 2px solid #ddd;
     border-radius: 10px;
     font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.dashboard-search input:focus {
+    border-color: var(--dashboard-secondary);
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+    outline: none;
 }
 
 .dashboard-search i {
@@ -147,6 +188,7 @@ body.page-index {
     color: #7f8c8d;
 }
 
+/* ========== TABLA ========== */
 .users-table {
     width: 100%;
     border-collapse: collapse;
@@ -170,16 +212,22 @@ body.page-index {
     vertical-align: middle;
 }
 
-.users-table tbody tr:hover {
-    background-color: #f9f9f9;
+.users-table tbody tr {
+    transition: all 0.3s ease;
 }
 
-/* Badges del dashboard */
+.users-table tbody tr:hover {
+    background-color: #f9f9f9;
+    transform: scale(1.01);
+}
+
+/* ========== BADGES ========== */
 .dashboard-badge {
     padding: 8px 16px;
     border-radius: 20px;
     font-weight: 500;
     font-size: 0.85rem;
+    display: inline-block;
 }
 
 .badge-admin {
@@ -202,10 +250,11 @@ body.page-index {
     color: white;
 }
 
-/* Botones de acción del dashboard */
+/* ========== BOTONES DE ACCIÓN ========== */
 .dashboard-actions {
     display: flex;
     gap: 10px;
+    justify-content: center;
 }
 
 .btn-dashboard {
@@ -218,28 +267,28 @@ body.page-index {
     border: none;
     cursor: pointer;
     transition: all 0.3s ease;
+    color: white;
+    text-decoration: none;
 }
 
 .btn-view {
     background: #3498db;
-    color: white;
 }
 
 .btn-edit {
     background: #f39c12;
-    color: white;
 }
 
 .btn-delete {
     background: #e74c3c;
-    color: white;
 }
 
 .btn-dashboard:hover {
-    transform: scale(1.1);
+    transform: scale(1.15);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Paginación del dashboard */
+/* ========== PAGINACIÓN ========== */
 .dashboard-pagination {
     display: flex;
     justify-content: center;
@@ -263,12 +312,34 @@ body.page-index {
     background: var(--dashboard-secondary);
     color: white;
     border-color: var(--dashboard-secondary);
+    transform: translateY(-2px);
 }
 
-/* Responsive del dashboard */
+/* ========== BOTONES PRINCIPALES ========== */
+.btn-primary-dashboard {
+    background: linear-gradient(135deg, var(--dashboard-secondary), #2980b9);
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary-dashboard:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(52, 152, 219, 0.3);
+}
+
+/* ========== RESPONSIVE ========== */
 @media (max-width: 768px) {
     .dashboard-header {
         padding: 40px 0 30px;
+        border-radius: 0 0 15px 15px;
     }
     
     .dashboard-title {
@@ -297,4 +368,29 @@ body.page-index {
     .dashboard-actions {
         justify-content: center;
     }
+    
+    .users-table tbody tr:hover {
+        transform: none;
+    }
 }
+
+/* ========== ANIMACIONES ========== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.stat-card {
+    animation: fadeInUp 0.5s ease-out backwards;
+}
+
+.stat-card:nth-child(1) { animation-delay: 0.1s; }
+.stat-card:nth-child(2) { animation-delay: 0.2s; }
+.stat-card:nth-child(3) { animation-delay: 0.3s; }
+.stat-card:nth-child(4) { animation-delay: 0.4s; }

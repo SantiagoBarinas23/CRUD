@@ -29,9 +29,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 <?php include 'includes/header.php'; ?>
 <?php include 'includes/messages.php'; ?>
 
-<head>
-    <link rel="stylesheet" href="css/crear.css">
-</head>
 
 <div class="user-create-container">
     <div class="card user-create-card">
